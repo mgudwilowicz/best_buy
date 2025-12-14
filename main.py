@@ -9,6 +9,7 @@ media_markt = Store(product_list)
 
 
 def show_active_products(store):
+    """Display all active products in the store with their price and available quantity."""
     products = store.get_all_products()
     print('-----')
     for i, product in enumerate(products, start=1):
@@ -17,6 +18,7 @@ def show_active_products(store):
 
 
 def order(store):
+    """Allow the user to create an order by selecting products and quantities from the store."""
     show_active_products(store)
     my_list= []
     print('When you want to finish order, enter empty text.')
@@ -39,6 +41,7 @@ def order(store):
 
 
 def start(store):
+    """Run the main store menu loop and handle user actions."""
     while True:
         user_input = input(
             '\n********** Store Menu **********\n'
@@ -66,7 +69,8 @@ def start(store):
 
 
 def main():
-   start(media_markt)
+    """Start the store application."""
+    start(media_markt)
 
 
 if __name__ == "__main__":
