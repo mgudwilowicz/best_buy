@@ -31,7 +31,7 @@ def order(store):
         if user_input_product == '':
             break
         elif int(user_input_product) > len(active_products):
-            print('Please choose product from a list')
+            print('Please choose product from the list')
             continue
 
         user_input_amount = int(input('What amount do you want? '))
