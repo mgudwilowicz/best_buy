@@ -37,16 +37,20 @@ class Store:
         return price
 
 
-bose = Product("Bose QuietComfort Earbuds", price=250, quantity=500)
-mac = Product("MacBook Air M2", price=1450, quantity=100)
-pixel = Product("Google Pixel 7", price=500, quantity=250)
 
-product_list = [mac, bose, pixel]
+def main():
+    bose = Product("Bose QuietComfort Earbuds", price=250, quantity=500)
+    mac = Product("MacBook Air M2", price=1450, quantity=100)
+    pixel = Product("Google Pixel 7", price=500, quantity=250)
 
-media_mark = Store(product_list)
+    product_list = [mac, bose, pixel]
 
-products = media_mark.get_all_products()
+    media_mark = Store(product_list)
 
-print(media_mark.get_total_quantity())
-print(media_mark.order([(products[0], 1), (products[1], 2)]))
+    products = media_mark.get_all_products()
 
+    print(media_mark.get_total_quantity())
+    print(media_mark.order([(products[0], 1), (products[1], 2)]))
+
+if __name__ == "__main__":
+    main()
