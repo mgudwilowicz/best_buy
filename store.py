@@ -2,6 +2,7 @@ from products import Product
 
 
 class Store:
+    """Represent a store that manages products and customer orders."""
 
     def __init__(self, list_of_products):
         """Initialize the store with a list of products."""
@@ -36,7 +37,8 @@ class Store:
         return active_products
 
 
-    def order(self, shopping_list):
+    @staticmethod
+    def order(shopping_list):
         """Process an order and return the total price of all purchased products."""
         price = 0
         for order in shopping_list:

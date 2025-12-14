@@ -1,4 +1,5 @@
 class Product:
+    """Represent a product with a name, price, quantity, and active status."""
 
     def __init__(self, name, price, quantity):
         """Represent a product with a name, price, quantity, and active status."""
