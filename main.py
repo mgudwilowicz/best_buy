@@ -20,6 +20,7 @@ def show_active_products(store):
 def order(store):
     """Allow the user to create an order by selecting products and quantities from the store."""
     show_active_products(store)
+    active_products = store.get_all_products()
     my_list= []
     print('When you want to finish order, enter empty text.')
 
@@ -29,10 +30,13 @@ def order(store):
         )
         if user_input_product == '':
             break
+        elif int(user_input_product) > len(active_products):
+            print('Please choose product from a list')
+            continue
 
         user_input_amount = int(input('What amount do you want? '))
 
-        user_product = store.get_all_products()[int(user_input_product) - 1]
+        user_product = active_products[int(user_input_product) - 1]
 
         my_list.append((user_product, user_input_amount))
         print('Product added to list!\n')
