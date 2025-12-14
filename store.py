@@ -7,6 +7,7 @@ class Store:
         """Initialize the store with a list of products."""
         self.list_of_products = list_of_products
 
+
     def add_product(self, product):
         """Add a new product to the store."""
         self.list_of_products.append(product)
@@ -24,6 +25,7 @@ class Store:
             total_quantity += product.get_quantity()
         return int(total_quantity)
 
+
     def get_all_products(self):
         """Return a list of all active products in the store."""
         active_products = []
@@ -32,6 +34,7 @@ class Store:
                 active_products.append(product)
 
         return active_products
+
 
     def order(self, shopping_list):
         """Process an order and return the total price of all purchased products."""

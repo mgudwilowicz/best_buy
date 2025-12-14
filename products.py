@@ -7,6 +7,7 @@ class Product:
         self.quantity = quantity
         self.active = True
 
+
     def get_quantity(self):
         """Return the current available quantity of the product."""
         return int(self.quantity)
@@ -36,6 +37,7 @@ class Product:
     def deactivate(self):
         """Mark the product as inactive."""
         self.active = False
+
 
     def show(self):
         """Print the product name, price, and current quantity."""
