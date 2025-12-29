@@ -40,12 +40,14 @@ class Store:
     @staticmethod
     def order(shopping_list):
         """Process an order and return the total price of all purchased products."""
-        price = 0
-        for order in shopping_list:
-            product, quantity = order
-            price += product.buy(quantity)
-
-        return price
+        total_price = 0
+        for item in shopping_list:
+            product, quantity = item
+            try:
+                total_price += product.buy(quantity)
+            except ValueError as e:
+                print(f"Cannot buy {quantity} of {product.name}: {e}")
+        return total_price
 
 
 
